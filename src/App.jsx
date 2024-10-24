@@ -1,12 +1,20 @@
 
+import { BrowserRouter, Route, Router, Routes } from 'react-router-dom'
 import './App.css'
+import HomePage from './pages/home/HomePage'
+import CartPage from './pages/cart/CartPage'
+import WishlistPage from './pages/wishlist/WishlistPage'
 
 function App() {
 
   return (
-    <>
-      <h1>Working....</h1>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/home' element={<HomePage />} />
+        <Route path='/cart' element={<CartPage />} />
+        <Route path='/wishlist' element={<WishlistPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
