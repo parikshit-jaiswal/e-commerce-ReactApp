@@ -1,0 +1,10 @@
+.banner {
+    padding-inline: 10%;
+}
+
+@media (width<710px) {
+    .banner {
+        font-size: 2.5vw;
+        padding-inline: 0%;
+    }
+}

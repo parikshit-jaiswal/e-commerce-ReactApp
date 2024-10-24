@@ -1,19 +1,25 @@
 import React from 'react'
 import Navbar from '../Navbar'
 import Footer from '../Footer'
-import FlashSale from './FlashSale'
-import BestSellingProducts from './BestSellingProducts'
-import Services from './Services'
-import Categories from './Categories'
+import FlashSale from './homeComponents/FlashSale'
+import BestSellingProducts from './homeComponents/BestSellingProducts'
+import Services from './homeComponents/Services'
+import Categories from './homeComponents/Categories'
+import SaleBanner from '../SaleBanner'
+import './homeComponents/home.css'
 
 function HomePage() {
     return (
         <>
+
+            <SaleBanner />
             <Navbar />
-            <FlashSale />
-            <BestSellingProducts />
-            <Categories />
-            <Services />
+            <div className="containerP">
+                <FlashSale />
+                <BestSellingProducts />
+                <Categories />
+                <Services />
+            </div>
             <Footer />
         </>
     )
