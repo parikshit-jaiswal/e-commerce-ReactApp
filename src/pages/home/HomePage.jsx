@@ -16,6 +16,7 @@ function HomePage() {
             <Navbar />
             <div className="containerP">
                 <FlashSale />
+                <hr />
                 <BestSellingProducts />
                 <Categories />
                 <Services />
