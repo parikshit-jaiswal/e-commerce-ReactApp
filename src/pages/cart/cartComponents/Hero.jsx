@@ -9,7 +9,6 @@ function Hero() {
             </div>
             <Table />
         </div>
-
     )
 }
 

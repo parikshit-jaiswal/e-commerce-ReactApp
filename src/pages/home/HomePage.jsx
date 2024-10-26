@@ -22,7 +22,6 @@ function HomePage() {
         } else {
             const newItem = { ...products.find(product => product.product_id === id), quantity: 1 };
             list.push(newItem);
-            console.log('Item added to cart:', newItem);
         }
         setCartItems(list);
         localStorage.setItem('cart', JSON.stringify(list));
@@ -63,7 +62,7 @@ function HomePage() {
         <>
             <SaleBanner />
             <Navbar />
-            <div className="containerP">
+            <div className="containerP mt-40">
                 <FlashSale addToCart={addToCart} addToWishlist={addToWishList} checkWishlist={checkWishlist} />
                 <hr />
                 <BestSellingProducts addToCart={addToCart} addToWishlist={addToWishList} checkWishlist={checkWishlist} />

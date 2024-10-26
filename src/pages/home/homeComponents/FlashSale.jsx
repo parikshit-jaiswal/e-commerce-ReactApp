@@ -15,7 +15,7 @@ function FlashSale({ addToCart, addToWishlist, checkWishlist }) {
                 <div className='text-4xl font-semibold my-4'>
                     Flash Sales
                 </div>
-                <div className="cards flex gap-6 justify-between mt-9 overflow-y-scroll scrollNone">
+                <div className="cards flex gap-6 mt-9 overflow-y-scroll scrollNone">
                     {products.map((product) => (
                         <Card
                             key={product.product_id}
