@@ -16,8 +16,15 @@ function Table() {
         setCart(updatedCart);
         localStorage.setItem('cart', JSON.stringify(updatedCart));
     };
+
+    const removeFromCart = (id) => {
+        const updatedCart = cart.filter((e) => id !== e.product_id);
+        setCart(updatedCart);
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+    }
+
     return (
-        <>
+        <><embed src="" type="" />
             <ul class="responsive-table">
                 <li class="table-header">
                     <div class="col col-1">Product</div>
@@ -35,6 +42,7 @@ function Table() {
                         subTotal={item.price_after_discount * item.quantity}
                         image_url={item.image_url}
                         changeQty={changeQty}
+                        removeFromCart={removeFromCart}
                     />
                 ))}
             </ul>

@@ -7,11 +7,12 @@ function Hero() {
     let [total, setTotal] = useState(0);
     cart.forEach(e => {
         total += e.price_after_discount * e.quantity
+        // setTotal(total);
     });
 
     return (
-        <div className='containerP ml-10 mt-16'>
-            <div className=" text-lg mb-20">
+        <div className='containerP ml-10 mt-44'>
+            <div className=" text-lg mb-[-5rem]">
                 <span className='opacity-60'>Home  &nbsp;&nbsp;/</span>&nbsp;&nbsp;  Cart
             </div>
             <Table />
