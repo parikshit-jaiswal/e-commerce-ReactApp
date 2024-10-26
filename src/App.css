@@ -1,4 +1,8 @@
 
 .containerP {
-    padding-inline: 4%;
+    padding-inline: 5%;
+}
+
+.scrollNone::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }

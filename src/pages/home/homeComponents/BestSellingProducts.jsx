@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from './Card'
+import products from '../../../../public/data'
 
 function BestSellingProducts() {
     return (
@@ -10,15 +11,18 @@ function BestSellingProducts() {
             </div>
             <div className='text-4xl font-semibold my-4'>Best Selling Products</div>
             <div className="cards flex gap-5 flex-wrap justify-between mt-10">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                {products.map((product) => (
+                    <Card
+                        key={product.product_id}
+                        name={product.product_name}
+                        originalPrice={product.original_price}
+                        discountPercent={product.discount_percent}
+                        priceAfterDiscount={product.price_after_discount}
+                        imageUrl={product.image_url}
+                    />
+                ))}
             </div>
+
         </div>
     )
 }
