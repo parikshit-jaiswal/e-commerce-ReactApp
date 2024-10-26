@@ -1,12 +1,10 @@
-import React from 'react'
 import Card from './Card'
 import Btn from '../../../extraComponent/Btn';
 import products from '../../../../public/data';
 
 
 
-function FlashSale() {
-
+function FlashSale({ addToCart }) {
     return (
         <>
             <div className=' my-16'>
@@ -17,15 +15,18 @@ function FlashSale() {
                 <div className='text-4xl font-semibold my-4'>
                     Flash Sales
                 </div>
-                <div className="cards flex gap-5 justify-between mt-9 overflow-y-scroll scrollNone">
+                <div className="cards flex gap-6 justify-between mt-9 overflow-y-scroll scrollNone">
                     {products.map((product) => (
                         <Card
                             key={product.product_id}
+                            p_id={product.product_id}
                             name={product.product_name}
                             originalPrice={product.original_price}
                             discountPercent={product.discount_percent}
                             priceAfterDiscount={product.price_after_discount}
                             imageUrl={product.image_url}
+                            addToCart={addToCart}
+
                         />
                     ))}
                 </div>

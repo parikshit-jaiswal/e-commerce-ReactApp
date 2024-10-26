@@ -2,7 +2,7 @@ import React from 'react'
 import Card from './Card'
 import products from '../../../../public/data'
 
-function BestSellingProducts() {
+function BestSellingProducts({ addToCart }) {
     return (
         <div className=' my-16'>
             <div className="saleTime flex items-center">
@@ -14,11 +14,13 @@ function BestSellingProducts() {
                 {products.map((product) => (
                     <Card
                         key={product.product_id}
+                        p_id={product.product_id}
                         name={product.product_name}
                         originalPrice={product.original_price}
                         discountPercent={product.discount_percent}
                         priceAfterDiscount={product.price_after_discount}
                         imageUrl={product.image_url}
+                        addToCart={addToCart}
                     />
                 ))}
             </div>
