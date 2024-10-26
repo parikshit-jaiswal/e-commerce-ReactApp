@@ -4,7 +4,7 @@ import products from '../../../../public/data';
 
 
 
-function FlashSale({ addToCart }) {
+function FlashSale({ addToCart, addToWishlist }) {
     return (
         <>
             <div className=' my-16'>
@@ -26,13 +26,13 @@ function FlashSale({ addToCart }) {
                             priceAfterDiscount={product.price_after_discount}
                             imageUrl={product.image_url}
                             addToCart={addToCart}
-
+                            addToWishlist={addToWishlist}
                         />
                     ))}
                 </div>
                 <div className="toggleBtn flex gap-1 justify-center mt-10">
-                    <div className="left bg-[#c5c5c53b] h-12 w-12 rounded-full text-center cursor-pointer"><i class="fa-solid fa-arrow-left text-2xl mt-2 opacity-60 hover:opacity-100"></i></div>
-                    <div className="left bg-[#c5c5c53b] h-12 w-12 rounded-full text-center cursor-pointer"><i class="fa-solid fa-arrow-right text-2xl mt-2 opacity-60 hover:opacity-100"></i></div>
+                    <div className="left bg-[#c5c5c53b] h-12 w-12 rounded-full text-center cursor-pointer"><i className="fa-solid fa-arrow-left text-2xl mt-2 opacity-60 hover:opacity-100"></i></div>
+                    <div className="left bg-[#c5c5c53b] h-12 w-12 rounded-full text-center cursor-pointer"><i className="fa-solid fa-arrow-right text-2xl mt-2 opacity-60 hover:opacity-100"></i></div>
                 </div>
                 <div className="text-center mt-12">
                     <Btn btnName='View All Products' />

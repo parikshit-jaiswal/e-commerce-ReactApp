@@ -11,34 +11,52 @@ import products from '../../../public/data'
 
 function HomePage() {
     const [cartItems, setCartItems] = useState([]);
+    const [wishList, setWishList] = useState([]);
 
     const addToCart = (id) => {
-        setCartItems((prevCartItems) => {
-            const itemIndex = prevCartItems.findIndex(item => item.product_id === id);
-            if (itemIndex > -1) {
-                const updatedCartItems = [...prevCartItems];
-                updatedCartItems[itemIndex].quantity += 1;
-                return updatedCartItems;
-            } else {
-                const newItem = { ...products.find(product => product.product_id === id), quantity: 1 };
-                return [...prevCartItems, newItem];
-            }
-        });
+        const list = JSON.parse(localStorage.getItem('cart')) || [];
+        const itemIndex = list.findIndex(item => item.product_id === id);
+
+        if (itemIndex > -1) {
+            list[itemIndex].quantity += 1;
+        } else {
+            const newItem = { ...products.find(product => product.product_id === id), quantity: 1 };
+            list.push(newItem);
+            console.log('Item added to cart:', newItem);
+        }
+        setCartItems(list);
+        localStorage.setItem('cart', JSON.stringify(list));
     };
 
-    useEffect(() => {
-        localStorage.setItem('cart', JSON.stringify(cartItems));
-    }, [cartItems]);
+
+
+    const addToWishList = (id) => {
+        let list = JSON.parse(localStorage.getItem('wishList')) || [];
+
+        const itemIndex = list.findIndex(item => item.product_id === id);
+
+        if (itemIndex > -1) {
+            list.splice(itemIndex, 1);
+        } else {
+            const newItem = products.find(product => product.product_id === id);
+            if (newItem) {
+                newItem.exist = true;
+                list.push(newItem);
+            }
+        }
+
+        setWishList(list);
+        localStorage.setItem('wishList', JSON.stringify(list));
+    };
 
     return (
         <>
-
             <SaleBanner />
             <Navbar />
             <div className="containerP">
-                <FlashSale addToCart={addToCart} />
+                <FlashSale addToCart={addToCart} addToWishlist={addToWishList} />
                 <hr />
-                <BestSellingProducts addToCart={addToCart} />
+                <BestSellingProducts addToCart={addToCart} addToWishlist={addToWishList} />
                 <Categories />
                 <Services />
             </div>
