@@ -2,7 +2,7 @@ import React from 'react'
 import Card from './Card'
 import products from '../../../../public/data'
 
-function BestSellingProducts({ addToCart, addToWishlist }) {
+function BestSellingProducts({ addToCart, addToWishlist, checkWishlist }) {
     return (
         <div className=' my-16'>
             <div className="saleTime flex items-center">
@@ -22,6 +22,7 @@ function BestSellingProducts({ addToCart, addToWishlist }) {
                         imageUrl={product.image_url}
                         addToCart={addToCart}
                         addToWishlist={addToWishlist}
+                        checkWishlist={checkWishlist}
                     />
                 ))}
             </div>

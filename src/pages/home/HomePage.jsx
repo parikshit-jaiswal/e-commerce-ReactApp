@@ -44,19 +44,29 @@ function HomePage() {
                 list.push(newItem);
             }
         }
-
         setWishList(list);
         localStorage.setItem('wishList', JSON.stringify(list));
     };
+
+    const checkWishlist = (id) => {
+        let list = JSON.parse(localStorage.getItem('wishList')) || [];
+        const itemIndex = list.findIndex(item => item.product_id === id);
+
+        if (itemIndex > -1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     return (
         <>
             <SaleBanner />
             <Navbar />
             <div className="containerP">
-                <FlashSale addToCart={addToCart} addToWishlist={addToWishList} />
+                <FlashSale addToCart={addToCart} addToWishlist={addToWishList} checkWishlist={checkWishlist} />
                 <hr />
-                <BestSellingProducts addToCart={addToCart} addToWishlist={addToWishList} />
+                <BestSellingProducts addToCart={addToCart} addToWishlist={addToWishList} checkWishlist={checkWishlist} />
                 <Categories />
                 <Services />
             </div>

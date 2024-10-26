@@ -4,7 +4,7 @@ import products from '../../../../public/data';
 
 
 
-function FlashSale({ addToCart, addToWishlist }) {
+function FlashSale({ addToCart, addToWishlist, checkWishlist }) {
     return (
         <>
             <div className=' my-16'>
@@ -27,6 +27,7 @@ function FlashSale({ addToCart, addToWishlist }) {
                             imageUrl={product.image_url}
                             addToCart={addToCart}
                             addToWishlist={addToWishlist}
+                            checkWishlist={checkWishlist}
                         />
                     ))}
                 </div>
