@@ -11,10 +11,8 @@
     }
 
     .table-header {
-        /* background-color: #abcddc; */
         font-size: 1rem;
         letter-spacing: 0.03em;
-        /* border: #222831 solid 2px; */
         border-radius: 10px;
         font-weight: 500;
         margin-left: -1.5rem;
@@ -22,12 +20,9 @@
     }
 
     .tableRow {
-        /* border: #222831 solid 2px; */
         box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
         border-radius: 10px;
-        /* font-weight: 700; */
         margin-left: -1.5rem;
-        /* font-size: 1.2rem; */
         display: flex;
         align-items: center;
     }
@@ -45,6 +40,6 @@
     }
 
     .col-4 {
-        flex-basis: 10%;
+        flex-basis: 20%;
     }
 }

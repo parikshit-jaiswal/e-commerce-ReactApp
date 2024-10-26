@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './table.css'
 import TableRow from './TableRow'
 
 function Table() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    console.log(cart);
+    const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) || []);
+
+    const changeQty = (id, newQty) => {
+        const updatedCart = cart.map((item) => {
+            if (item.product_id === id) {
+                return { ...item, quantity: newQty };
+            }
+            return item;
+        });
+
+        setCart(updatedCart);
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+    };
     return (
         <>
             <ul class="responsive-table">
@@ -16,12 +27,14 @@ function Table() {
                 </li>
                 {cart.map((item) => (
                     <TableRow
-                        key={item.product_id} // Ensure unique key for each row
+                        key={item.product_id}
+                        p_id={item.product_id}
                         productName={item.product_name}
                         price={item.price_after_discount}
                         quantity={item.quantity}
-                        subTotal={item.price_after_discount * item.quantity} // Calculate subtotal
-                        image_url={item.image_url} // Pass the image URL if needed
+                        subTotal={item.price_after_discount * item.quantity}
+                        image_url={item.image_url}
+                        changeQty={changeQty}
                     />
                 ))}
             </ul>
