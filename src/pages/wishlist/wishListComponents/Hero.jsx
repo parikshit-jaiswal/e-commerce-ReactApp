@@ -40,35 +40,46 @@ function Hero() {
         localStorage.removeItem('wishList');
     };
 
-
-    return (
-        <div className='containerP ml-8 mt-44 mb-20'>
-            <div className="text-xl flex justify-between">
-                Wishlist ({wishList.length})
-                <div role='button' onClick={addAllToCart} className="mr-5">
-                    <Btn btnName='Move all to cart' />
+    if (wishList.length > 0) {
+        return (
+            <div className='containerP ml-8 mt-44 mb-20'>
+                <div className="text-xl flex justify-between">
+                    Wishlist ({wishList.length})
+                    <div role='button' onClick={addAllToCart} className="mr-5">
+                        <Btn btnName='Move all to cart' />
+                    </div>
                 </div>
+                <div className="cards flex gap-3 flex-wrap mt-10">
+                    {wishList.map((item) => (
+                        <Card
+                            key={item.product_id}
+                            p_id={item.product_id}
+                            name={item.product_name}
+                            originalPrice={item.original_price}
+                            discountPercent={item.discount_percent}
+                            priceAfterDiscount={item.price_after_discount}
+                            imageUrl={item.image_url}
+                            del={true}
+                            removeFromWishlist={removeFromWishlist}
+                        />
+                    ))}
+                </div>
+
             </div>
-            <div className="cards flex gap-3 flex-wrap mt-10">
-                {wishList.map((item) => (
-                    <Card
-                        key={item.product_id}
-                        p_id={item.product_id}
-                        name={item.product_name}
-                        originalPrice={item.original_price}
-                        discountPercent={item.discount_percent}
-                        priceAfterDiscount={item.price_after_discount}
-                        imageUrl={item.image_url}
-                        del={true}
-                        removeFromWishlist={removeFromWishlist}
-                    />
-                ))}
-            </div>
-
-        </div>
 
 
-    )
+        )
+    }
+    else {
+        return (
+            <div className="">
+                <div className="mt-[10rem] mb-10 flex justify-center">
+                    <img className='h-[35vw] w-[40vw]' src="emptyWishlist.svg" alt="" />
+
+                </div>
+            </div >
+        )
+    }
 }
 
 export default Hero
