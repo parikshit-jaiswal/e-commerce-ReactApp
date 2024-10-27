@@ -16,6 +16,13 @@ input[type=number] {
     border-radius: 5px;
 }
 
+.dark {
+    input[type=number] {
+        color: white;
+        background-color: transparent;
+    }
+}
+
 body::-webkit-scrollbar {
     display: none;
 }

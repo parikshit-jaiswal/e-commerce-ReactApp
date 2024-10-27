@@ -12,7 +12,7 @@ function FlashSale({ addToCart, addToWishlist, checkWishlist }) {
                     <div className='w-5 h-10 bg-[#DB4444] rounded mr-2'></div>
                     <div className='font-bold text-[#DB4444] text-xl'>Today's</div>
                 </div>
-                <div className='text-4xl font-semibold my-4'>
+                <div className='text-4xl font-semibold my-4 dark:text-white'>
                     Flash Sales
                 </div>
                 <div className="cards flex gap-6 mt-9 overflow-y-scroll scrollNone">
