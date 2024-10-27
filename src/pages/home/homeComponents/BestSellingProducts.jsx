@@ -10,7 +10,7 @@ function BestSellingProducts({ addToCart, addToWishlist, checkWishlist }) {
                 <div className='font-bold text-[#DB4444] text-xl'>This Month</div>
             </div>
             <div className='text-4xl font-semibold my-4'>Best Selling Products</div>
-            <div className="cards flex gap-5 flex-wrap  mt-10">
+            <div className="cards flex gap-5 flex-wrap justify-center  mt-10">
                 {products.map((product) => (
                     <Card
                         key={product.product_id}
