@@ -2,29 +2,10 @@ import React, { useState } from 'react'
 import './table.css'
 import TableRow from './TableRow'
 
-function Table() {
+function Table({ changeQty, removeFromCart }) {
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) || []);
-
-    const changeQty = (id, newQty) => {
-        const updatedCart = cart.map((item) => {
-            if (item.product_id === id) {
-                return { ...item, quantity: newQty };
-            }
-            return item;
-        });
-
-        setCart(updatedCart);
-        localStorage.setItem('cart', JSON.stringify(updatedCart));
-    };
-
-    const removeFromCart = (id) => {
-        const updatedCart = cart.filter((e) => id !== e.product_id);
-        setCart(updatedCart);
-        localStorage.setItem('cart', JSON.stringify(updatedCart));
-    }
-
     return (
-        <><embed src="" type="" />
+        <>
             <ul class="responsive-table">
                 <li class="table-header">
                     <div class="col col-1">Product</div>

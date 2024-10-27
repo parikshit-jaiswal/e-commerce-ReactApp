@@ -40,11 +40,6 @@ function Hero() {
         localStorage.removeItem('wishList');
     };
 
-    // // Sync `cart` state with localStorage whenever `cart` changes
-    // useEffect(() => {
-    //     localStorage.setItem('cart', JSON.stringify(cart));
-    // }, [cart]);
-
 
     return (
         <div className='containerP ml-8 mt-44 mb-20'>
