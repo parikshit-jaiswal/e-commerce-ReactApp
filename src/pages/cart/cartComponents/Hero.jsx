@@ -6,6 +6,7 @@ function Hero() {
 
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) || []);
 
+
     const changeQty = (id, newQty) => {
         const updatedCart = cart.map((item) => {
             if (item.product_id === id) {
@@ -24,19 +25,20 @@ function Hero() {
         localStorage.setItem('cart', JSON.stringify(updatedCart));
     }
 
+    const [total, setTotal] = useState(0);
 
-    let [total, setTotal] = useState(0);
-    const netTotal = cart.reduce((acc, e) => acc + e.price_after_discount * e.quantity, 0);
     useEffect(() => {
+        const netTotal = cart.reduce((acc, item) => acc + item.price_after_discount * item.quantity, 0);
         setTotal(netTotal);
-    }, [cart])
+        console.log("Updated Total:", netTotal); // Debugging log
+    }, [cart]);
 
     return (
-        <div className='containerP ml-10 mt-44'>
-            <div className=" text-lg mb-[-5rem]">
+        <div className='containerP ml-10 mt-44 mb-44'>
+            <div className=" text-lg mb-16">
                 <span className='opacity-60'>Home  &nbsp;&nbsp;/</span>&nbsp;&nbsp;  Cart
             </div>
-            <Table removeFromCart={removeFromCart} changeQty={changeQty} />
+            <Table changeQty={changeQty} removeFromCart={removeFromCart} cart={cart} />
             <div className="flex justify-end mr-[5rem]">
                 <div className="border-black border-2 w-[30rem] rounded-xl p-5">
                     <div className="text-3xl font-semibold mb-4">Cart Total</div>

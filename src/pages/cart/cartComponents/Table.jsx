@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './table.css'
 import TableRow from './TableRow'
 
-function Table({ changeQty, removeFromCart }) {
-    const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) || []);
+function Table({ cart, changeQty, removeFromCart }) {
+
     return (
         <>
             <ul class="responsive-table">
