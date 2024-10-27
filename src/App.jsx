@@ -5,8 +5,8 @@ import HomePage from './pages/home/HomePage'
 import CartPage from './pages/cart/CartPage'
 import WishlistPage from './pages/wishlist/WishlistPage'
 
-function App() {
 
+function App() {
   return (
     <BrowserRouter>
       <Routes>
@@ -18,4 +18,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

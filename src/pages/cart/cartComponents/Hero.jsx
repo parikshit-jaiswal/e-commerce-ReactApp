@@ -42,7 +42,7 @@ function Hero() {
                     <Table changeQty={changeQty} removeFromCart={removeFromCart} cart={cart} />
                 </div>
                 <div className="cartTotal flex justify-end mr-[15vw] ">
-                    <div className="border-black border-2 w-[30rem] rounded-xl p-5">
+                    <div className="border-black dark:bg-[#282828] border-2 w-[30rem] rounded-xl p-5">
                         <div className="text-3xl font-semibold mb-4">Cart Total</div>
                         <div className="flex justify-between p-2 text-lg"><div className="">Subtotal:</div><div className="">₹{total}</div></div>
                         <hr />
