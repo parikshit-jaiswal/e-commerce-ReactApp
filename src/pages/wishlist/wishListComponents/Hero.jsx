@@ -42,14 +42,14 @@ function Hero() {
 
     if (wishList.length > 0) {
         return (
-            <div className='containerP ml-8 mt-44 mb-20'>
-                <div className="text-xl flex justify-between">
+            <div className='containerP mt-44 mb-20'>
+                <div className="text-lg mx-5 flex justify-between">
                     Wishlist ({wishList.length})
                     <div role='button' onClick={addAllToCart} className="mr-5">
-                        <Btn btnName='Move all to cart' />
+                        <Btn btnName='Move all to cart' size='medium' />
                     </div>
                 </div>
-                <div className="cards flex gap-3 flex-wrap mt-10">
+                <div className="cards  flex gap-3 flex-wrap justify-center mt-10">
                     {wishList.map((item) => (
                         <Card
                             key={item.product_id}
@@ -75,7 +75,6 @@ function Hero() {
             <div className="">
                 <div className="mt-[10rem] mb-10 flex justify-center">
                     <img className='h-[35vw] w-[40vw]' src="emptyWishlist.svg" alt="" />
-
                 </div>
             </div >
         )

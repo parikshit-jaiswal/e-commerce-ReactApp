@@ -2,7 +2,7 @@ import React from 'react'
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 
-function Btn({ btnName = "click here" }) {
+function Btn({ btnName = "click here", size = "large" }) {
     const ColorButton = styled(Button)(({ theme }) => ({
         color: theme.palette.getContrastText("#DB4444"),
         backgroundColor: "#DB4444",
@@ -11,7 +11,7 @@ function Btn({ btnName = "click here" }) {
         },
     }));
     return (
-        <ColorButton variant="contained" size='large'>{btnName}</ColorButton>
+        <ColorButton variant="contained" size={size}>{btnName}</ColorButton>
     )
 }
 
