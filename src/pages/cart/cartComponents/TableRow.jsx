@@ -4,10 +4,10 @@ function TableRow({ p_id, removeFromCart, changeQty, productName = "Something", 
 
     return (
         <li class="tableRow">
-            <div class="col col-1"><img className='h-20 rounded-lg mb-2' src={image_url} alt="" /><span className='text-lg font-bold'>{productName}</span></div>
+            <div class="col col-1"><img className='p_img h-20 rounded-lg mb-2' src={image_url} alt="" /><span className='text-lg font-bold'>{productName}</span></div>
             <div class="col col-2">₹{price}</div>
             <div class="col col-3"><input className='w-10 p-1' min={1} type="number" defaultValue={quantity} onChange={(e) => changeQty(p_id, e.target.value)} /></div>
-            <div class="col col-4">₹{subTotal} <span role='button' onClick={() => removeFromCart(p_id)}><i class="fa-solid fa-trash text-2xl ml-20 cursor-pointer hover:text-[#db4444]"></i></span></div>
+            <div class="col col-4">₹{subTotal} <span role='button' onClick={() => removeFromCart(p_id)}><i class="fa-solid fa-trash text-2xl ml-[4vw] cursor-pointer hover:text-[#db4444]"></i></span></div>
         </li>
     )
 }

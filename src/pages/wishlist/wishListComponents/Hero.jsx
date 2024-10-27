@@ -66,8 +66,6 @@ function Hero() {
                 </div>
 
             </div>
-
-
         )
     }
     else {

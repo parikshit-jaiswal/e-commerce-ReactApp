@@ -1,5 +1,4 @@
 .responsive-table {
-    margin-inline: 5rem;
 
     li {
         border-radius: 3px;
@@ -7,7 +6,7 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 25px;
-
+        width: 60vw;
     }
 
     .table-header {
@@ -41,5 +40,59 @@
 
     .col-4 {
         flex-basis: 20%;
+    }
+}
+
+
+
+@media (width<=900px) {
+
+    .responsive-table {
+        li {
+            width: 80vw;
+        }
+
+        .p_img {
+            height: 10vw;
+        }
+    }
+}
+
+@media (width<=610px) {
+
+
+    .responsive-table {
+        li {
+            width: 95vw;
+            margin-right: 1rem;
+        }
+
+        .p_img {
+            height: 10vw;
+        }
+
+        .col-1 {
+            flex-basis: 25%;
+        }
+
+        .col-2 {
+            flex-basis: 10%;
+        }
+
+        .col-3 {
+            flex-basis: 10%;
+        }
+
+        .col-4 {
+            flex-basis: 30%;
+        }
+    }
+}
+
+@media (width<800px) {
+    .cartTotal {
+        width: 80vw;
+        justify-content: start;
+        margin-right: 3vw;
     }
 }
