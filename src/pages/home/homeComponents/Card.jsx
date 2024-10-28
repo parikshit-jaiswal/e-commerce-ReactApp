@@ -6,7 +6,7 @@ function Card({ p_id, name, originalPrice, discountPercent, priceAfterDiscount, 
                 <img style={{ objectFit: "cover" }} className='rounded-t-lg h-56 w-[20rem]' src={imageUrl} />
 
                 <div className="bg-black  dark:bg-[#db4444] font-bold text-center items-center p-2  rounded-b-lg">
-                    <span role='button' onClick={() => addToCart(p_id)} className='text-white hover:text-black'><i className="fa-solid fa-cart-shopping"></i> Add to Cart</span>
+                    <span role='button' onClick={() => addToCart(p_id)} className='text-white hover:text-[#db4444] dark:hover:text-black'><i className="fa-solid fa-cart-shopping"></i> Add to Cart</span>
                 </div>
                 <div className="relative bottom-[15.7rem] left-3 flex justify-between items-center">
                     <div className="discount bg-[#DB4444] text-white text-center items-center w-fit px-3 py-1 rounded-md">-{discountPercent}% </div>
